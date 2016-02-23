@@ -1,0 +1,40 @@
+<html>
+<body>
+
+Welcome, {{name}}
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<form action="/create-game" method="post">
+    <input type="text" placeholder="Game name" name="gameName" width="200"/>
+    <br/>
+    <select name="gameGenre">
+        <option selected disabled>Genre</option>
+        <option value="Adventure">Adventure</option> <!--Creates dropdown menu-->
+        <option value="RPG">RPG</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Shooter">Shooter</option>
+        <option value="Racing">Racing</option>
+    </select>
+    <br/>
+    <select name="gamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="PC">PC</option> <!--Creates dropdown menu-->
+        <option value="PS4">PS4</option>
+        <option value="Xbox One">Xbox One</option>
+        <option value="Wii U">Wii U</option>
+    </select>
+    <br/>
+    <input type="number" placeholder="Release Year" name="gameYear"/> <!--Add what this does-->
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+<ol>
+    {{#games}}
+    <li>{{title}} - {{genre}} - {{platform}} - {{releaseYear}}</li>
+    {{/games}}
+</ol>
+</body>
+</html>
